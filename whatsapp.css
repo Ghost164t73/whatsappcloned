@@ -1,0 +1,236 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+nav{
+    background: #167;
+}
+
+nav .nav-top{
+    padding: 20px;
+    justify-content: space-between;
+    display: flex;
+}
+
+nav .nav-down{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    color: #d9d6d6;
+}
+
+.nav-down .chats,
+.nav-down .updates,
+.nav-down .Calls{
+    cursor: pointer;
+}
+
+.nav-title{
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 540;
+}
+
+.archived a{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    color: black;
+    text-decoration: none;
+}
+
+.archived a span{
+    color: rgb(18, 92, 18);
+}
+
+.chat{
+    display: flex;
+}
+
+.chat img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin: 10px;
+}
+
+.chat-place{
+    transform: translateX(0%);
+}
+
+.hide-chat-place{
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+}
+
+.chat a{
+    text-decoration: none;
+    color: black;
+    margin: 12px;
+}
+
+.chat a p{
+    font-weight: 600;
+
+}
+
+.chat a span{
+    font-size: 0.9em;
+}
+
+.updates-section{
+    position: absolute;
+    top: 120px;
+    width: 100vw;
+    height: auto;
+}
+
+.update-title{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.update-title span{
+    font-weight: 590;
+    font-size: 1.2em;
+
+}
+
+.my-status{
+    display: flex;
+    margin: 13px;
+}
+
+.my-status img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.my-status .texts{
+    margin-left: 10px;
+}
+
+.my-status .texts .first{
+    font-weight: 600;
+}
+
+.my-status .texts p:last-child{
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+.update{
+    display: flex;
+    margin: 10px;
+    margin-top: 20px;
+}
+
+.update img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.update .texts{
+    padding: 1px;
+    margin-left: 10px;
+    margin-top: 1px;
+}
+
+.update .texts{
+    font-weight: 600;
+}
+
+.update .texts p span{
+    font-weight: 100;
+    font-size: 0.9em;
+}
+
+.updates-section{
+    transform: translateX(200%);
+}
+
+.show-updates-section{
+    transform: translateX(0%);
+    transition: transform 0.1s;
+}
+
+.chat-box{
+    background-color: rgb(7, 33, 39);
+    position: fixed;
+    top: 0;
+    transform: translateX(200%);
+    transition:transform 0.2s;
+    width: 100vw;
+    overflow-y: visible;
+}
+
+.show-chat-box{
+    transform: translateX(0%);
+}
+
+.top-heading{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.top-heading img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-left: 5px;
+}
+
+.top-heading .image {
+    display: flex;
+    cursor: pointer;
+}
+
+.top-heading .image span{
+    color: white;
+    font-weight: 590;
+    margin: 10px;
+}
+
+.messages{
+    padding: 10px;
+    height: 700px;
+    overflow-y: scroll;
+}
+.message-bubble{
+    padding: 6px;
+    max-width: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.message-bubble p{
+    background: #167;
+    padding: 6px;
+    border-radius: 20px;
+    border-top-left-radius: 2px;
+    padding-left: 10px;
+}
+
+.right-bubble{
+    min-width: 200px;
+}
+
+.right-bubble p{
+    background: #167;
+    padding: 6px;
+    border-radius: 20px;
+    border-top-right-radius: 2px;
+    padding-right: 10px;
+}
+

@@ -1,180 +1,251 @@
-const chats = [
-    {
-        image: 'images/new image.jpg',
-        name: 'Yunus',
-        text: 'you the best',
-    },
-    {
-        image: 'images/smile.png',
-        name: 'Evil Spirit',
-        text: 'Hw far',
-    },
-    {
-        image: 'images/taylor-heery-qwvydaAOEDw-unsplash.jpg',
-        name: 'Nim Nim',
-        text: 'I swear',
-    },
-    {
-        image: 'images/istockphoto-1320487463-1024x1024.jpg',
-        name: 'Khalifa',
-        text: 'Oya na',
-    },
-    {
-        image: 'images/image.png',
-        name: 'lolipop',
-        text: 'Ogaaa',
-    },
-    {
-        image: 'images/pexels-gustavo-fring-4173096.jpg',
-        name: 'Gift',
-        text: 'Wagwan',
-    },
-    {
-        image: 'images/daddy jnr.jpg',
-        name: 'big b',
-        text: 'oya na',
-    },
-    {
-        image: 'images/brad-starkey-iDIkZxzofDk-unsplash.jpg',
-        name: 'jude',
-        text: 'thing na',
-    },
-    {
-        image: 'images/Anime_pfp-082f06bc-ee36-4d8f-991d-fb5726a69b22.jpg',
-        name: 'Thinkabell',
-        text: 'why na',
-    },
-    {
-        image: 'images/first choice.png',
-        name: 'Yusuf',
-        text: 'Aint no way',
-    },
-    {
-        image: 'images/sophie-jonas-WC9dRfiBKDM-unsplash 1.png',
-        name: 'Danjuma',
-        text: 'stop saying rubbish',
-    },
-    {
-        image: 'images/pexels-erik-mclean-9216590.jpg',
-        name: 'Ola',
-        text: 'Of course',
-    },
-    {
-        image: 'images/pexels-skitterphoto-9796.jpg',
-        name: 'Hebrew',
-        text: 'Anything guy',
-    },
-    {
-        image: 'images/pexels-skitterphoto-9796.jpg',
-        name: 'Fool',
-        text: 'Fool',
-    },
-    {
-        image: 'images/pexels-skitterphoto-9796.jpg',
-        name: 'dady',
-        text: 'Noted',
+let inputBox = document.querySelector('.input-box');
+const toTopBtn = document.querySelector('.to-top');
+const header = document.querySelector('.header');
+const bars = document.querySelector('.bars');
+const images = document.querySelector('.image');
+const overlay = document.getElementById('overlay');
+
+// DROP DOWN 
+const dropDown = document.querySelector('.drop-down-menu');
+bars.onclick = () => {
+    dropDown.classList.toggle("open");
+    console.log("clicked");
+    const isOpen = dropDown.classList.contains("open")
+
+    if (isOpen) {
+        bars
     }
+}
 
-];
 
-let chatHTML = ''
+function show() {
+//SHOW STICKY HEADER
+    const windowPosition = window.scrollY;
 
-chats.forEach(chat => {
-    chatHTML += `
-     
-    <div class="chat">
-    <img src="${chat.image}">
-        <a href="#" class="name-details">
-            <p>${chat.name}</p>
-            <span>.. ${chat.text}</span>
-        </a>
-</div>
-    `
+    if (windowPosition > 1 ) {
+        header.classList.add('sticky-header')
+    } else {
+        header.classList.remove('sticky-header')
+    };
+
+//SHOW BACK TO TOP 
+    if (windowPosition > 400) {
+        toTopBtn.style.transform = 'translateY(0%)';
+    } else {
+        toTopBtn.style.transform = 'translateY(300%)';
+    };
+
+};
+
+window.addEventListener('scroll', () => {
+    show();
+    fadeInElement();
+    dropDown.classList.remove("open");
 });
 
-document.querySelector('.chat-place')
-    .innerHTML = chatHTML;
+function fadeIn() {
+    images.classList.add('active')
+};
 
-const updates = [{
-    name: 'Maimunah',
-    time: '2:08 PM',
-    image: 'images/istockphoto-1320487463-1024x1024.jpg',
-}, {
-    name: 'Safi',
-    time: '4:56 PM',
-    image: 'images/taylor-heery-qwvydaAOEDw-unsplash.jpg',
-}, {
-    name: 'Balogin',
-    time: '9:16 AM',
-    image: 'images/istockphoto-1320487463-1024x1024.jpg',
-},
-    {
-    name: 'Favor',
-    time: '9:07 PM',
-    image: 'images/happiness.png',
-},{
-    name: 'Aqram',
-    time: '4:09 AM',
-    image: 'images/image.png',
-},{
-    name: 'yasmine',
-    time: '4:40 PM',
-    image: 'images/pexels-skitterphoto-9796.jpg',
-},
-];
 
-let updateHTML = '';
+//MAKE THE INPUT BOX VISIBLE AND DISABLE SCROLLING
 
-updates.forEach(update => {
-    const images = update.image;
-    updateHTML += `
-    
-    <div class="update">
-    <img src="${images}" alt="">
-    <div class="texts">
-        <p class="first">${update.name}</p>
-        <p><span>${update.time}</span></p>
-    </div>
-</div>
-    `
 
-});
+const visible = () => {
+    setTimeout(() => {
+        showInputBox();
+    }, 3000);
+};
 
-const recentUpdates = document.querySelector('.recent-updates')
 
-recentUpdates.innerHTML = updateHTML;
+fadeIn();
 
-const showUpdate = document.querySelector('.updates');
-const showChats = document.querySelector('.chats');
-const chatPlace = document.querySelector('.chat-place');
-const updateSec = document.querySelector('.updates-section');
-const archived = document.querySelector('.archived');
-console.log(showChats);
+//LOADER
+let loader = document.querySelector('.loader');
+let second = document.querySelector('.second-section');
 
-showUpdate.addEventListener('click', () => {
-    chatPlace.classList.add('hide-chat-place');
-    updateSec.classList.add('show-updates-section');
-    archived.style.display = 'none';
+window.onscroll = function () {
+    const windowScroll = window.scrollY;
+    const element = document.documentElement.scrollHeight;
+    const windowHeight = window.innerHeight;
 
-});
+    const scrolled = (windowScroll / (element - windowHeight)) * 100;
+    loader.style.width = `${scrolled}%`;
+};
+//END LOADER
 
-showChats.addEventListener('click', () => {
-    chatPlace.classList.remove('hide-chat-place');
-    updateSec.classList.remove('show-updates-section');
-    archived.style.display = 'block';
-});
+//FADE IN IMAGES AND OTHER ELEMENTS
+const fadeIntoPosition = document.querySelectorAll('.fade-in');
 
-const names = document.querySelectorAll('.name-details');
-const chatBox = document.querySelector('.chat-box');
-const chatImage = document.querySelector('.image')
+function fadeInElement() {
+    fadeIntoPosition.forEach(element => {
+        const imagePosition = element.getBoundingClientRect().top;
+        let windowScroll = window.scrollY - 300;
+         
+        if (imagePosition < windowScroll) {
+            element.classList.add('fade-in-active');
+        };
 
-names.forEach(name => {
-    name.addEventListener('click', () => {
-        chatBox.classList.add('show-chat-box')
     });
+   
+};
+
+//BEGINNING OF INPUTBOX 
+let alertSpan = document.querySelector('.alert');
+let changeName = document.querySelector('.change-name')
+let nameInput = document.querySelector('.name-input');
+const submitBtn = document.querySelector('.submit');
+const h1 = document.querySelector('.input-heading');
+let inputSec = document.querySelector('.input-section');
+const span = document.querySelectorAll('.name');
+
+function showInputBox() {
+    document.body.style.overflow = 'hidden';
+    inputSec.style.visibility = 'visible';
+    overlay.style.display = 'block';
+};
+
+changeName.addEventListener('click', () => {
+    showInputBox();
 });
 
-chatImage.addEventListener('click', () => {
-    chatBox.classList.remove('show-chat-box')
-})
+const typeOutName = (name) => {
+    setTimeout(() => {
+        const typed = new Typed(".name", {
+            strings: [`${name}`],
+            typeSpeed: 100,
+            backSpeed: 100,
+            backDelay: 1000,
+            showCursor: false
+        });
+    }, 4000);
+};
+
+function validateName(name) {
+    span.forEach(sp => {
+        name = nameInput.value.trim();
+        console.log(name)
+
+        if (/[^a-zA-Z]/.test(name) || name.length < 4) {
+            displayAlert("Name should be at least 4 letters", "red");
+            return;
+        }
+    
+        if (/\d/.test(name)) {
+            displayAlert("Name should not contain numbers", "red");
+            return;
+        };
+
+        if (name) {
+            name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+            // Store the name in localStorage
+            localStorage.setItem('user_name', name);
+        };
+    
+        if (name === "") {
+            displayAlert("Please enter your name", "red");
+            return
+        } else {
+            typeOutName(name)
+            setTimeout(function () {
+                sp.innerText = `${name}`;
+            }, 7000);
+            displayAlert("Just a sec...", "limegreen")
+            accept(name);
+            setTimeout(() => {
+                removeInputBox();
+                h1.textContent = `Hey there! ${name}😊`
+            }, 4000);
+        };
+    });
+
+    nameInput.value = "";
+};
+
+submitBtn.addEventListener('click', () => {
+    validateName();
+});
+
+document.body.addEventListener("keypress", (e) => {
+
+    if (inputSec.style.visibility === "visible") {
+        if (e.key === "Enter") {
+            validateName();
+    }
+    };
+});
+
+
+//SET INPUT BOX BACK TO HOW IT WAS
+function backToDefault() {
+    nameInput.style.display = "block";
+    inputBox.style.padding = "30px";
+    submitBtn.style.display = "block";
+}
+
+// Check if there's a stored name on page load
+document.addEventListener('DOMContentLoaded', () => {
+    span.forEach(sp => {
+        let storedName = localStorage.getItem('user_name');
+        if (storedName) {
+            sp.innerText = `${storedName}`;
+            h1.innerText = `Hey there! ${storedName} 😊`;
+            h1.style.color = 'green';
+            submitBtn.textContent = "change name";
+        } else {
+            visible();
+        };
+    });
+   
+});
+
+
+const closePop = document.querySelector('.x-mark');
+
+closePop.addEventListener('click', removeInputBox);
+
+
+function displayAlert(alert, color) { 
+    alertSpan.innerText = alert;
+    alertSpan.style.display = "block";
+    alertSpan.style.backgroundColor = `${color}`;
+
+    setTimeout(() => {
+        alertSpan.style.display = "none";
+    }, 2000); 
+};
+
+function accept(name) { 
+    setTimeout(() => {
+        h1.style.color = 'green';
+        h1.innerText = `Thank you! ${name} 😊`;
+        nameInput.style.display = "none";
+        inputBox.style.padding = "50px";
+        submitBtn.style.display = "none"
+    }, 2000);
+};
+
+//remove INPUT BOX 
+function removeInputBox() {
+    document.body.style.overflow = 'auto';
+    inputSec.style.visibility = 'hidden';
+    alertSpan.style.display = "none";
+    overlay.style.display = 'none';
+    backToDefault();
+};
+
+
+
+//END OF INPUT BOX
+
+// scroll reveal
+ScrollReveal({ 
+    reset: true,
+    distance: "80px",
+    duration: 2000,
+    delay: 200,
+});
+ 
+ScrollReveal().reveal('.gallery-container', { origin: "bottom" });
+ScrollReveal().reveal('.heading ', { origin: "top" });
 

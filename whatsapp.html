@@ -3,137 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/cdb316c04e.js" crossorigin="anonymous"></script>
+    <title>Web development</title>
     <link rel="stylesheet" href="whatsapp.css">
 </head>
 <body>
-    <nav>
-        <div class="nav-top">
-            <div class="nav-title">
-                WhatsApp
-            </div>
-            <div class="nav-icons">
-                <i class="ri-menu-3-line nav_menu open-menu-button"></i> 
-                <i class="ri-user-line nav__login" id="login-btn"></i>
-            </div>
-        </div>
-        <div class="nav-down">
-            <div class="chats">
-                Chats
-            </div>
-            <div class="updates">
-                Updates
-            </div>
-            <div class="Calls">
-                Calls
-            </div>
-        </div>
-    </nav>
-    <div class="archived">
-        <a href="#">
-           <b> Archived</b>
-            <span>47</span>
-        </a>
+    <hr class="loader">
+    <div id="overlay"></div>
+  <header class="header">
+    <div class="logo">
+        <a href="" style="font-size: 1.4em;padding: 1px;">Logo</a>
     </div>
-    <div class="chat-place">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery-section" class="services">Gallery</a></li>
+        </ul>
+        <div>
+            <a href="#second-section" class="contact">Contact</a>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="bars"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+  </header>
+
+<main>
+<section>
+    <section class="first-section">
+        <img src="images/Untitled (2).png" alt="" class="image">
+        <div>
+
+            <h1 class="heading">
+                Welcome <br>
+                <span class="name"></span>
+            </h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipason dolor sirt amet rica fril a si rwasdoi getoiadn ioas st usjdbf 
+                </p>
+        </div>
+    </setion>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about">
+    <section class="second-section">
+        <img src="images/quality.png" alt="" class="second-image fade-in">
+        <div>
+            <h1 class="heading">Your pit stop for quality fuel</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores totam quaerat voluptas, incidunt veritatis aliquam eius, animi qui doloribus obcaecati quo cum nemo? Beatae dolorum aliquam facere? Ducimus, at voluptate!</p>
+        </div>
+    </section>
+    
+    <section class="second-section third-section">
+        <img src="images/ride (2).png" alt="" class="third-image fade-in">
+        <div>
+            <h1 class="heading">Ride with no worries</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores totam quaerat voluptas, incidunt veritatis aliquam eius, animi qui doloribus obcaecati quo cum nemo? Beatae dolorum aliquam facere? Ducimus, at voluptate!</p>
+        </div>
+    </section>
+</section>
+<!-- END ABOUT SECTION -->
+
+  
+    <a class="to-top" href = "#">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="arrow">
+            <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
+    </a>
+
+    <div class="input-section">
+        <div class="input-box">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="x-mark" >
+                <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+                <h2 class="input-heading">What can we call you?👇<span style="font-size: .7em;color: #777;">(optional)</span></h2>
+                <input type="text" placeholder="name or nickname e.g.Brayden,Diana" class="name-input" maxlength="10">
+                <span class="alert" style="font-size: 1.1em;"></span>
+            <button class="submit">Submit</button>
+        </div>    
     </div>
 
-    <section class="updates-section">
-        <div class="update-title">
-            <span>Status</span>
-            <i>icon</i>
-        </div>
-
-        <div class="my-status">
-            <img src="images/Abstract_-61977143-475e-4140-893d-6fc9e882420d.jpg" alt="">
-            <div class="texts">
-                <p class="first"> My status</p>
-                <p>Tap to add status update</p>
+    <section id="gallery-section"> 
+        <h1 style="font-size: 3em;color: rgb(0, 123, 255);justify-content: center;align-items: center;margin-bottom: 50px;" class="heading">Gallery</h1>
+        <div class="gallery-container">
+            <div class="gallery">
+                <img src="images/taylor-heery-qwvydaAOEDw-unsplash.jpg" alt="" class="gallery-image">
+                <div class="image-text">
+                    <h1 style="font-size: 1.3em;"><span class="name"></span></h1>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt impedit cumque labore doloribus sunt itaque, illum quae! Necessitatibus voluptatibus sequi officia, cumque tenetur placeat dicta possimus vitae enim ex eveniet!
+                </div>
+            </div>
+            <div class="gallery">
+                <img src="images/taylor-heery-qwvydaAOEDw-unsplash.jpg" alt="" class="gallery-image">
+                <div class="image-text">
+                   ribus sunt itaque, illum quae! Necessitatibus voluptatibus sequi officia, cumque tenetur placeat dicta possimus vitae enim ex eveniet!
+                </div>
+            </div>
+            <div class="gallery">
+                <img src="images/taylor-heery-qwvydaAOEDw-unsplash.jpg" alt="" class="gallery-image">
+                <div class="image-text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt impedit cumque labore doloribus sunt itaque, illum quae! Necessitatibus voluptatibus sequi officia, cumque tenetur placeat dicta possimus vitae enim ex eveniet!
+                </div>
+            </div>
+            <div class="gallery">
+                <img src="images/taylor-heery-qwvydaAOEDw-unsplash.jpg" alt="" class="gallery-image">
+                <div class="image-text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt impedit cumque labore doloribus sunt itaque, illum quae! Necessitatibus voluptatibus sequi officia, cumque tenetur placeat dicta possimus vitae enim ex eveniet!
+                </div>
+            </div>
+            <div class="gallery">
+                <img src="images/taylor-heery-qwvydaAOEDw-unsplash.jpg" alt="" class="gallery-image">
+                <div class="image-text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt impedit cumque labore doloribus sunt itaque, illum quae! Necessitatibus voluptatibus sequi officia, cumque tenetur placeat dicta possimus vitae enim ex eveniet!
+                </div>
+            </div>
+            <div class="gallery">
+                <img src="images/taylor-heery-qwvydaAOEDw-unsplash.jpg" alt="" class="gallery-image">
+                <div class="image-text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt impedit cumque labore doloribus sunt itaque, illum quae! Necessitatibus voluptatibus sequi officia, cumque tenetur placeat dicta possimus vitae enim ex eveniet!
+                </div>
             </div>
         </div>
-
-        <span style="padding: 10px; font-size: 0.9em;"> Recent updates</span>
-
-        <div class="recent-updates">
-            <div class="update"></div>
     </section>
 
-    <div class="chat-box">
-        <div class="top-heading">
-            <div class="image">
-                <img src="images/1677.jpg" alt="">
-                <span>Muta</span>
-            </div>
-            <div class="icons">
-                <i>icons</i>
-            </div>
-        </div>
-        <div class="messages">
-            <div class="message-bubble">
-            <p>At all</p> 
-            </div>
-            <div class="right-bubble">
-                <p>Guyyyyyy</p>
-            </div> 
-            <div class="message-bubble">
-                <p>I swear na wetin him talk fa</p> 
-            </div>
-            <div class="right-bubble">
-                <p>Go screw yourself</p> 
-            </div>
-            <div class="message-bubble">
-                <p>omo smash oo</p> 
-            </div>
-            <div class="right-bubble">
-                <p>AI got people believing anything</p> 
-            </div>
-            <div class="message-bubble">
-                <p>omo smash oo</p> 
-            </div>
-            <div class="right-bubble">
-                <p>AI got people believing anything</p> 
-            </div>
-            <div class="message-bubble">
-                <p>omo smash oo</p> 
-            </div>
-            <div class="right-bubble">
-                <p>AI got people believing anything</p> 
-            </div>
-            <div class="message-bubble">
-                <p>omo smash oo</p> 
-            </div>
-            <div class="right-bubble">
-                <p>AI got people believing anything</p> 
-            </div>
-            <div class="message-bubble">
-                <p>omo smash oo</p> 
-            </div>
-            <div class="right-bubble">
-                <p>AI got people believing anything</p> 
-            </div>
-            <div class="message-bubble">
-                <p>omo smash oo</p> 
-            </div>
-            <div class="right-bubble">
-                <p>AI got people believing anything</p> 
-            </div>
-            <div class="message-bubble">
-                <p>omo smash oo</p> 
-            </div>
-            <div class="right-bubble">
-                <p>AI got people believing anything</p> 
-            </div>
-            <div class="message-bubble">
-                <p>omo smash oo</p> 
-            </div>
-            <div class="right-bubble">
-                <p>AI got people believing anything</p> 
-            </div>
-        </div>
-        <div class="message-box">
-            <input type="text" placeholder="Type a message">
-        </div>
+    <div class="change-name">change name</div>
+
+    <!-- drop down menu for smaller screens -->
+    <div class="drop-down-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery-section">Gallery</a></li>
+         <li><a href="#second-section" class="contact">Contact</a></li>
     </div>
+ <!-- end of drop drop down menu -->
+  
+  
+  </main>
+
+  <!-- type js -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="whatsapp.js"></script>
 </body>
 </html>
